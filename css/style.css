@@ -1,0 +1,30 @@
+.background {
+    background-color: grey;
+}
+
+.banner {
+    background-color: rgb(224, 224, 224);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.main {
+    background-color: silver;
+    padding: 100px 20px;
+}
+
+.section {
+    padding: 20px 5px;
+}
+
+.poster {
+    width: 100%;
+}
+
+.info {
+    padding: 10px 0;
+}
+
+.copyright {
+    text-align: center;
+}
