@@ -1,27 +1,62 @@
-    // The below code fills in the first row of the table
-    var movie = "Mr. Nobody";
-    var queryURL = "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi" + movie + "X-RapidAPI-Key" "73ae3fb7b9msh825c3218f23ad0dp10e50ejsn7e1841915505";
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAZyx-LYc1-oV-dFlDdsmbhDI0FLttQVW4",
+    authDomain: "wtfsww.firebaseapp.com",
+    databaseURL: "https://wtfsww.firebaseio.com",
+    projectId: "wtfsww",
+    storageBucket: "wtfsww.appspot.com",
+    messagingSenderId: "336077336011"
+};
 
-    unirest.get("https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi")
-    .header("X-RapidAPI-Key", "73ae3fb7b9msh825c3218f23ad0dp10e50ejsn7e1841915505")
-    .end(function (result) {
-      console.log(result.status, result.headers, result.body);
-    });
+  firebase.initializeApp(config);
+
+  // Variables and URL building elements
+const tmdbApiKey = "90968a3a4b4657a1e2fce6130d75ba6f";
+const ytApiKey = "AIzaSyC20vgTb7sNZe3ZoXWThFESKMjwCyPIof0";
+let genrePick = $("#genreDropdown").val(genre);
+let medium = $("#mediumDropdown").val();
+const genre = [{
+    action: 28,
+    adventure: 12,
+    animation: 16,
+    comedy: 35,
+    crime: 80,
+    documentary: 90,
+    drama: 18,
+    family: 10751,
+    fantasy: 14,
+    history: 36,
+    horror: 27,
+    music: 10402,
+    mystery: 9648,
+    romance: 10749,
+    sciFi: 878,
+    tvMovie: 10770,
+    thriller: 53,
+    war: 10752,
+    western: 37
+}];
+
+let tmdbURL = "http://api.themoviedb.org/3/discover/" + medium + "?api_key=" + tmdbApiKey +
+                 "&with_genres=" + genrePick;
+
+let ytURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q=" + tmdbResults.results.title + 
+            " trailer&key=" + ytApiKey;
+
+$("#submit").on("click", function(event) {
     $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      // Create a new table row element
-      var tRow = $("<tr>");
+        url: tmdbURL,
+        method: "GET"
+    }).then(function(tmdbResults) {
+        console.log(tmdbResults);
+    })
 
-      // Methods run on jQuery selectors return the selector they we run on
-      // This is why we can create and save a reference to a td in the same statement we update its text
-      var titleTd = $("<td>").text(response.Title);
-      var yearTd = $("<td>").text(response.Year);
-      var actorsTd = $("<td>").text(response.Actors);
-        
-      // Append the newly created table data to the table row
-      tRow.append(titleTd, yearTd, actorsTd);
-      // Append the table row to the table body
-      $("tbody").append(tRow);
-    });
+
+$.ajax({
+    url: ytURL,
+    method: "GET"
+}).then(function(ytResults) {
+    
+})
+
+});
