@@ -22,45 +22,119 @@
     <header class="row banner">
         <h1 class="col-12">WHAT THE F#*K SHOULD WE WATCH?</h1>
     </header>
+    
+    <div class="row">
+        <div class="mediumRadios">
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="movieRadio" name="medium" value="movie" class="custom-control-input mediumRadio">
+                <label class="custom-control-label" for="movieRadio">Movie</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="tvRadio" name="medium" value="tv" class="custom-control-input mediumRadio">
+                <label class="custom-control-label" for="tvRadio">TV Show</label>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="genreRadios">
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreAction" name="genre" value="28" class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreAction">Action</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreAdventure" name="genre" value="12" class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreAdventure">Adventure</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreAnimation" name="genre" value="16"  class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreAnimation">Animation</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreComedy" name="genre" value="35"  class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreComedy">Comedy</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreCrime" name="genre" value="80"  class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreCrime">Crime</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreDocumentary" name="genre" value="90"  class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreDocumentary">Documentary</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreDrama" name="genre" value="18" class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreDrama">Drama</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreFamily" name="genre" value="10751"  class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreFamily">Family</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreFantasy" name="genre" value="14" class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreFantasy">Fantasy</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreHistory" name="genre" value="36"  class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreHistory">History</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreHorror" name="genre" value="27"  class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreHorror">Horror</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreMusic" name="genre" value="10402" class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreMusic">Musical</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreMystery" name="genre" value="9648"  class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreMystery">Mystery</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreRomance" name="genre" value="10749" class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreRomance">Romance</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreSciFi" name="genre" value="878" class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreSciFi">Sci-Fi</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreThriller" name="genre" value="53" class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreThriller">Thriller</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreWar" name="genre" value="10752" class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreWar">War</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="genreWestern" name="genre" value="37"  class="custom-control-input genreRadio">
+                <label class="custom-control-label" for="genreWestern">Western</label>
+            </div>
+        </div>
+        <br> <br>
+        <div class="submitButton" id="submitBtn">
+            <button type="button" class="btn btn-info">Find me a title!</button>
+        </div>
+
+    </div>
 
     <div class="row main">
 
-        <section class="col-md-4 poster-section">
+        <section class="col-md-4 movieBox">
 
-            <img src="assets/images/placeholder.jpg" class="rounded mx-auto d-block poster" alt="poster1">
-
+            <div class="poster-section" id="moviePoster" alt="poster1"> </div>
             <div class="row info">
-                <div class="col-6 center">Score: 10/10</div>
-                <div class="col-6 center">Rated: PG-13</div>
+                <div class="scoreRating" id="score"></div>
+                <div class="mpaaRating" id="rating"></div>
             </div>
-
-            <div class="row">
-                <div class="col-1"></div>
-                <button type="button" class="btn btn-dark col-5">Choose!</button>
-                <button type="button" class="btn btn-danger col-5">Seen it</button>
-                <div class="col-1"></div>
+            <div class="row buttons">
+                <div class="choose-button btn btn-dark col-5">I'll watch this!</div>
+                <div class="seen-button btn btn-danger col-5">Already seen it!</div>
             </div>
 
         </section>
 
-        <section class="col-md-4 poster-section">
-
-            <img src="assets/images/placeholder.jpg" class="rounded mx-auto d-block poster" alt="poster2">
-            
-            <div class="row info">
-                <div class="col-6 center">Score: 1/10</div>
-                <div class="col-6 center">Rated: R</div>
-            </div>
-
-            <div class="row">
-                <div class="col-1"></div>
-                <button type="button" class="btn btn-dark col-5">Choose!</button>
-                <button type="button" class="btn btn-danger col-5">Seen it</button>
-                <div class="col-1"></div>
-            </div>
-
-        </section>
-
+<!--
         <section class="col-md-4 poster-section">
 
             <img src="assets/images/placeholder.jpg" class="rounded mx-auto d-block poster" alt="poster3">
@@ -80,6 +154,7 @@
         </section>
 
     </div>
+-->
 
     <footer class="row banner">
         <h1 class="col-12">Follow on: Twitter, Facebook, etc...</h1>
@@ -87,10 +162,12 @@
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <!-- JavaScript -->
     <script src="javascript/app.js"></script>
 

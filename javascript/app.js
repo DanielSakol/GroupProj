@@ -13,9 +13,17 @@
   // Variables and URL building elements
 const tmdbApiKey = "90968a3a4b4657a1e2fce6130d75ba6f";
 const ytApiKey = "AIzaSyC20vgTb7sNZe3ZoXWThFESKMjwCyPIof0";
-let genrePick = $("#genreDropdown").val(genre);
-let medium = $("#mediumDropdown").val();
-const genre = [{
+let genrePick = $(".genreRadio").val();
+let medium = $(".mediumRadio").val();
+let testResults = genrePick + " | " + medium;
+console.log(genrePick);
+console.log(medium);
+
+$( "#submitBtn").click(function() {
+    console.log(testResults);
+  });
+
+/*const genre = [{
     action: 28,
     adventure: 12,
     animation: 16,
@@ -31,11 +39,10 @@ const genre = [{
     mystery: 9648,
     romance: 10749,
     sciFi: 878,
-    tvMovie: 10770,
     thriller: 53,
     war: 10752,
     western: 37
-}];
+}];*/
 
 let tmdbURL = "http://api.themoviedb.org/3/discover/" + medium + "?api_key=" + tmdbApiKey +
                  "&with_genres=" + genrePick;
