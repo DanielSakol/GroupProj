@@ -13,15 +13,27 @@
   // Variables and URL building elements
 const tmdbApiKey = "90968a3a4b4657a1e2fce6130d75ba6f";
 const ytApiKey = "AIzaSyC20vgTb7sNZe3ZoXWThFESKMjwCyPIof0";
-let genrePick = $(".genreRadio").val();
-let medium = $(".mediumRadio").val();
-let testResults = genrePick + " | " + medium;
-console.log(genrePick);
-console.log(medium);
+
+  // initially loads with no medium and genre picked
+let medium = ""
+let genrePick = ""
+
+// clicking a medium button will save "movie" or "TV" into the medium variable
+$(".mediumRadio").click(function() {
+  medium = this.value;
+  console.log(medium);
+});
+
+// clicking a genre button will save a genre into the genrePick variable
+$(".genreRadio").click(function() {
+  genrePick = this.value;
+  console.log(genrePick);
+});
 
 $( "#submitBtn").click(function() {
-    console.log(testResults);
-  });
+  let testResults = medium + " | " + genrePick;
+  console.log(testResults);
+});
 
 /*const genre = [{
     action: 28,
@@ -48,22 +60,21 @@ let tmdbURL = "http://api.themoviedb.org/3/discover/" + medium + "?api_key=" + t
                  "&with_genres=" + genrePick;
 
 let ytURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q=" + tmdbResults.results.title + 
-            " trailer&key=" + ytApiKey;
+          " trailer&key=" + ytApiKey;
 
 $("#submit").on("click", function(event) {
-    $.ajax({
-        url: tmdbURL,
-        method: "GET"
-    }).then(function(tmdbResults) {
-        console.log(tmdbResults);
-    })
+  $.ajax({
+    url: tmdbURL,
+    method: "GET"
+  }).then(function(tmdbResults) {
+    console.log(tmdbResults);
+  })
 
 
-$.ajax({
+  $.ajax({
     url: ytURL,
     method: "GET"
-}).then(function(ytResults) {
-    
-})
+  }).then(function(ytResults){
+  })
 
 });
