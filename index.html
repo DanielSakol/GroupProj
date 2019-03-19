@@ -121,39 +121,49 @@
     <div class="row main">
 
         <section class="col-md-4 movieBox">
-
+            <div class="title-section" id="titleSpace">
             <div class="poster-section" id="moviePoster" alt="poster1"> </div>
             <div class="row info">
                 <div class="scoreRating" id="score"></div>
                 <div class="mpaaRating" id="rating"></div>
             </div>
-            <div class="row buttons">
-                <div class="choose-button btn btn-dark col-5">I'll watch this!</div>
-                <div class="seen-button btn btn-danger col-5">Already seen it!</div>
-            </div>
-
+            <div class="row buttons"></div>
         </section>
 
-        <!--
-        <section class="col-md-4 poster-section">
+    </div>
 
-            <img src="assets/images/placeholder.jpg" class="rounded mx-auto d-block poster" alt="poster3">
+    <div class="row chosenTable">
+        <div class="card-header">Gonna Watch List</div>
+        <div class="card-body">
+            <table class="table table-hover table-dark" id="chosen-table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th class="text-center">Title</th>
+                        <th class="text-center">Avg. Vote</th>
+                        <th class="text-center">Release Date</th>
+                        <th class="text-center">YouTube Trailer</th>
+                    </tr>
+                </thead>
+                <tbody id="chosenRows"></tbody>
+            </table>
+        </div>
+    </div>
 
-            <div class="row info">
-                <div class="col-6 center">Score: 6/10</div>
-                <div class="col-6 center">Rated: PG</div>
-            </div>
-
-            <div class="row">
-                <div class="col-1"></div>
-                <button type="button" class="btn btn-dark col-5">Choose!</button>
-                <button type="button" class="btn btn-danger col-5">Seen it</button>
-                <div class="col-1"></div>
-            </div>
-
-        </section>
-        -->
-
+    <div class="row seenTable">
+        <div class="card-header">Already Seen List</div>
+        <div class="card-body">
+            <table class="table table-hover table-dark" id="seen-table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th class="text-center">Title</th>
+                        <th class="text-center">Avg. Vote</th>
+                        <th class="text-center">Release Date</th>
+                        <th class="text-center">YouTube Trailer</th>
+                    </tr>
+                </thead>
+                <tbody id="seenRows"></tbody>
+            </table>
+        </div>
     </div>
 
 
