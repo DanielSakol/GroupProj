@@ -78,18 +78,22 @@ $("#submitBtn").on("click", function() {
     // TMDB AJAX Promise:
     }).then(function(response) {
       // Pull 3 random choices from the response data w/ a loop
-        for (let i = 0; i < 3; i++) {
-            resultsArr.push(response.results);
-            let choice = Math.floor(Math.random() * response.results.length);
-            choiceArr.push(choice);
-            console.log(choiceArr);
-        }
+      for (let i = 0; i < 3; i++) {
+        resultsArr.push(response.results);
+        let choice = Math.floor(Math.random() * response.results.length);
+            
+        choiceArr.push(choice);
+        console.log(choiceArr);
+
+        // builds poster
+        document.getElementsByTagName("img")[i].setAttribute("src", "https://image.tmdb.org/t/p/w342/" + response.results[choice].poster_path);
+      }
 
         let tmdbResponse = response.results;
         console.log(response.results);
         console.log(tmdbURL);
         //return tmdbResponse;
-        
+
         // Build the YouTube API Call
         let ytURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q=" + tmdbResponse.title + 
         "%20trailer&key=" + ytApiKey;
@@ -100,10 +104,10 @@ $("#submitBtn").on("click", function() {
           poster.attr("class", "moviePoster");
           poster.attr("id", "poster");
           poster.attr("src", "http://api.themoviedb.org/3/discover" + response.results[i].poster_path);
-          if (medium = "tv") {
-            title =response.results[i].name
+          if (medium === "tv") {
+            title = response.results[i].name
             $("#titleSpace").text(response.results[i].title);
-          } else if (medium = "movie") {
+          } else if (medium === "movie") {
             $("#titleSpace").text(response.results[i].title);
           }
           $("#score").text(response.results[i].vote_average);
