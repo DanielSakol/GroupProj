@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: "Arial Black, Gadget, sans-serif";}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1; 
+  padding-top: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; /* scrolling */ 
+}
+
+.modal-content {
+  font-family: "Arial Black", Gadget, sans-serif;  
+  font-size: 30px;
+  text-shadow: 1px 1px rgb(212, 212, 212);
+  text-align: left;
+  margin: auto;
+  padding: 15px;
+  width: 80%;
+  box-shadow: 4px 4px;
+  background: rgb(201, 201, 201) 
+  url("https://media.giphy.com/media/xUPGckTDZvX54iPGzm/giphy.gif")
+  85% 50% 
+  no-repeat;
+}
+
+/* Close Button */
+.close {
+  color: rgb(237, 255, 78);
+  float: right;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h2>Validation Modal</h2>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Refresh Search</button>
+
+<!-- The Modal -->
+<div id="ValModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Um, Hello? <br>
+    You have to pick:<br>
+    <strong>SHOW</strong> or <strong>MOVIE</strong></p>
+    <p>AND</p>
+    <p>a <strong>GENRE</strong></p>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var vModal = document.getElementById('ValModal');
+
+// Get the button that opens the modal
+var vBtn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var vSpan = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+vBtn.onclick = function() {
+  vModal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+vSpan.onclick = function() {
+  vModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == vModal) {
+    vModal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
